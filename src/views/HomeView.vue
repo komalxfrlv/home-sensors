@@ -1,18 +1,47 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="blue-boxes">
+      <div class="sensor-picker-holder">
+        <BlueBox class="blue-box">
+          <SensorPicker></SensorPicker>
+        </BlueBox>
+      </div>
+      <div class="time-viewer-holder">
+        <BlueBox class="blue-box">
+          <TimeViewer></TimeViewer>
+        </BlueBox>
+      </div>
+    </div>
+    <div class="chart">
+      <SensorChart></SensorChart>
+    </div>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import SensorPicker from "@/components/SensorPicker";
+import BlueBox from "@/components/BlueBox";
+import TimeViewer from "@/components/TimeViewer";
+import SensorChart from "@/components/SensorChart";
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    SensorChart,
+    BlueBox,
+    SensorPicker,
+    TimeViewer,
   }
 }
 </script>
+<style scoped>
+.blue-box {
+  max-width: 300px;
+}
+.blue-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+.chart {
+  margin-top: 100px;
+}
+</style>
